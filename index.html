@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Evictions</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/27832270049?text=Hi%20Nelson%2C%20I%20would%20like%20to%20enquire%20about%20Power%20House%20Gym."
+   class="whatsapp-float"
+   target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+<header class="header">
+    <div class="logo">
+        
+        <span>Evictions</span>
+    </div>
+
+    <ul class="navbar">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="https://wa.me/27832270049" target="_blank">Contact</a></li>
+    </ul>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero-sec fade-in">
+
+    <!-- SLIDESHOW LEFT -->
+    <div class="hero-img slideshow">
+        <img src="images/reto.png" class="slide active" alt="Gym Image">
+        <img src="images/reto2.png" class="slide" alt="Gym Image">
+        <img src="images/reto3.png" class="slide" alt="Gym Image">
+    </div>
+
+    <!-- TEXT RIGHT -->
+    <div class="intro">
+        <h2>Legal Evictions. Done Right</h2>
+        <h3>Protect Your Property. Respect the Law</h3>
+        <h3>Fast, Fair, and Legal Eviction Solutions.</h3>
+        <p>
+            Your Property Rights, Our Expertise,
+            Avoid Illegal Evictions Partner With Professionals.
+        </p>
+
+        <div class="intro-btn">
+            <a href="https://wa.me/27832270049" target="_blank" class="btn btn-primary">Join Now</a>
+            <a href="#about" class="btn btn-secondary">About Us</a>
+        </div>
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+<section class="about-sec fade-in" id="about">
+    <div class="about-header">
+        <h2>About Evicyions</h2>
+        <butto
+        n class="tts-btn" onclick="playAbout()">🎧 Listen</button>
+    </div>
+
+    <div id="aboutText" class="about-card">
+        <p><strong>At Secure Evictions South Africa, we specialize in guiding landlords, property managers, and homeowners through the complex process of eviction with professionalism and care.
+
+Eviction in South Africa is not just about property rights—it’s about balancing the law with human dignity. Governed by the Constitution and the Prevention of Illegal Eviction from and Unlawful Occupation of Land Act (PIE Act), every eviction must follow strict legal procedures. That means</strong></p>
+
+        <h3>What We Offer</h3>
+        <ul>
+            <li>Court orders are essential – no one can be evicted without one.</li>
+            <li>Fairness matters – courts consider the circumstances of vulnerable occupiers before granting eviction.</li>
+            <li>Landlord protection – property owners have the right to reclaim their property, but only through lawful means.</li>
+            <li>Occupier rights – tenants and unlawful occupiers are entitled to notice, dignity, and consideration of housing alternatives.</li>
+
+        </ul>
+
+        <h3>Our Community</h3>
+        <p>We value dignity.
+
+We respect all people.
+
+support safe communities.
+
+uphold the law.
+
+build fairness together.</p>
+
+        <h3>Our Promise</h3>
+        <p>We promise fairness.
+
+ professionalism.
+
+ legal compliance.
+
+ your property rights.
+
+We act with respect and integrity</p>
+    </div>
+</section>
+
+<!-- SLIDESHOW SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll(".slide");
+    let index = 0;
+
+    setInterval(() => {
+        slides[index].classList.remove("active");
+        index = (index + 1) % slides.length;
+        slides[index].classList.add("active");
+    }, 3000);
+});
+</script>
+
+<!-- TEXT TO SPEECH -->
+<script>
+function playAbout() {
+    const text = document.getElementById("aboutText").innerText;
+    const speech = new SpeechSynthesisUtterance(text);
+    speech.lang = "en-US";
+    speech.rate = 0.95;
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(speech);
+}
+</script>
+
+</body>
+</html>

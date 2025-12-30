@@ -1,0 +1,264 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* COLORS */
+:root {
+    --dark-slate: #424B54;
+    --warm-beige: #C5BAAF;
+}
+
+/* BODY */
+body {
+    background: var(--warm-beige);
+    color: var(--dark-slate);
+    overflow-x: hidden;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 6%;
+    background: var(--dark-slate);
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+}
+
+.logo img {
+    width: 42px;
+}
+
+.navbar {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+}
+
+.navbar a::after {
+    content: "";
+    height: 2px;
+    width: 0;
+    background: var(--warm-beige);
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    transition: 0.3s;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+    width: 100%;
+}
+
+/* HERO SECTION */
+.hero-sec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 110px 6%;
+    gap: 80px;
+}
+
+/* SLIDESHOW LEFT */
+.hero-img {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.hero-img.slideshow {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    border-radius: 22px;
+    overflow: hidden;
+    background: #fff;
+    border: 3px solid var(--dark-slate);
+}
+
+.slideshow img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slideshow img.active {
+    opacity: 1;
+}
+
+/* FIT reto2.png */
+.slideshow img:nth-child(2) {
+    object-fit: contain;
+    padding: 20px;
+}
+
+/* TEXT RIGHT */
+.intro {
+    flex: 1;
+    text-align: right;
+}
+
+.intro h2 {
+    font-size: 34px;
+    font-weight: 300;
+}
+
+.intro h1 {
+    font-size: 68px;
+}
+
+.intro h3 {
+    font-size: 40px;
+}
+
+.intro p {
+    max-width: 500px;
+    margin-left: auto;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+/* BUTTONS */
+.intro-btn {
+    display: flex;
+    justify-content: flex-end;
+    gap: 14px;
+}
+
+.btn {
+    padding: 14px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: var(--dark-slate);
+    color: #fff;
+}
+
+.btn-secondary {
+    border: 2px solid var(--dark-slate);
+    color: var(--dark-slate);
+}
+
+/* ABOUT SECTION */
+.about-sec {
+    padding: 110px 6%;
+    background: #e8e4de;
+}
+
+.about-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.about-sec h2 {
+    font-size: 36px;
+}
+
+.about-card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 22px;
+    border: 2px solid var(--dark-slate);
+}
+
+/* TTS */
+.tts-btn {
+    background: var(--dark-slate);
+    color: #fff;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+/* FADE */
+.fade-in {
+    animation: fadeUp 1.2s ease forwards;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* WHATSAPP */
+.whatsapp-float {
+    position: fixed;
+    bottom: 26px;
+    right: 26px;
+    background: #fff;
+    padding: 14px;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.whatsapp-float img {
+    width: 34px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .hero-sec {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-img {
+        justify-content: center;
+    }
+
+    .intro {
+        text-align: center;
+    }
+
+    .intro p {
+        margin: auto;
+    }
+
+    .intro-btn {
+        justify-content: center;
+    }
+
+    .hero-img.slideshow {
+        width: 300px;
+        height: 300px;
+    }
+
+    .intro h1 {
+        font-size: 46px;
+    }
+
+    .navbar {
+        display: none;
+    }
+}
